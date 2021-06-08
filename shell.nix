@@ -18,6 +18,7 @@ pkgs.mkShell {
     pythonPackages.minio
     pythonPackages.sqlalchemy
     pythonPackages.minio
+    pythonPackages.celery
     pythonPackages.pydantic
 
     pythonPackages.pytest

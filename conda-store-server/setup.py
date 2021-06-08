@@ -38,7 +38,9 @@ setup(
         'flask-cors',
         'pyyaml',
         'pydantic',
+        'celery',
         'minio',
+        'typer',
     ],
     extras_require={
         'dev': [
