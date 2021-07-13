@@ -38,9 +38,7 @@ class BuildStatus(enum.Enum):
 
 
 class Specification(Base):
-    """The specifiction for a given conda environment
-
-    """
+    """The specifiction for a given conda environment"""
 
     __tablename__ = "specification"
 
@@ -75,9 +73,7 @@ build_conda_package = Table(
 
 
 class Build(Base):
-    """The state of a build of a given specification
-
-    """
+    """The state of a build of a given specification"""
 
     __tablename__ = "build"
 
@@ -95,7 +91,10 @@ class Build(Base):
 
     def build_path(self, store_directory):
         store_path = pathlib.Path(store_directory).resolve()
-        return store_path / f"{self.specification.sha256}-{self.specification.created_on}-{self.specification.name}"
+        return (
+            store_path
+            / f"{self.specification.sha256}-{self.specification.created_on}-{self.specification.name}"
+        )
 
     def environment_path(self, environment_directory):
         environment_directory = pathlib.Path(environment_directory).resolve()
